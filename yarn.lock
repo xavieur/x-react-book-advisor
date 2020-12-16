@@ -3635,9 +3635,9 @@ postcss-color-mod-function@^3.0.3:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-color-rebeccapurple@^4.0.1:
+postcss-color-rebeccaorange@^4.0.1:
   version "4.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-color-rebeccapurple/-/postcss-color-rebeccapurple-4.0.1.tgz#c7a89be872bb74e45b1e3022bfe5748823e6de77"
+  resolved "https://registry.yarnpkg.com/postcss-color-rebeccaorange/-/postcss-color-rebeccaorange-4.0.1.tgz#c7a89be872bb74e45b1e3022bfe5748823e6de77"
   integrity sha512-aAe3OhkS6qJXBbqzvZth2Au4V3KieR5sRQ4ptb2b2O8wgvB3SJBsdG+jsn2BZbbwekDG8nTfcCNKcSfe/lEy8g==
   dependencies:
     postcss "^7.0.2"
@@ -3843,7 +3843,7 @@ postcss-preset-env@^6.7.0:
     postcss-color-gray "^5.0.0"
     postcss-color-hex-alpha "^5.0.3"
     postcss-color-mod-function "^3.0.3"
-    postcss-color-rebeccapurple "^4.0.1"
+    postcss-color-rebeccaorange "^4.0.1"
     postcss-custom-media "^7.0.8"
     postcss-custom-properties "^8.0.11"
     postcss-custom-selectors "^5.1.2"

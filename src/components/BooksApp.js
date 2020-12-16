@@ -79,11 +79,13 @@ export default class BooksApp extends React.Component {
         const subtitle = 'Te asesoro sobre entidades alfanuméricas'
 
         return (
-            <div>
+            <div className="container">
                 <Header subtitulo={subtitle} />
                 <RecommendBook escogerLibro={this.escogerLibro} hayLibros={this.state.books.length > 0} />
-                <Books libros={this.state.books} borrarLibros={this.borrarLibros} borrarUnLibro={this.borrarUnLibro} />
-                <AddBook introducirLibro={this.introducirLibro} />
+                <div className="widget">
+                    <Books libros={this.state.books} borrarLibros={this.borrarLibros} borrarUnLibro={this.borrarUnLibro} />
+                    <AddBook introducirLibro={this.introducirLibro} />
+                </div>
                 <RecommendModal libroSeleccionado={this.state.recommendedBook} deseleccionarLibro={this.deseleccionarLibro} />
             </div>
         )

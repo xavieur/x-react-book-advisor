@@ -1,0 +1,31 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $dark-blue;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+  color: $off-white;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+header{
+  h1{
+    font-size: 1.6rem;
+  }
+}
+main{
+  margin-bottom: 1.6rem;
+}
+
+footer{
+  margin-bottom: 3.2rem
+}

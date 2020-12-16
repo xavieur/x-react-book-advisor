@@ -14,7 +14,7 @@ const RecommendModal = (props) => {
             <h3>Libro recomendado</h3>
             {!!props.libroSeleccionado && <p>{props.libroSeleccionado.title}</p>}
             {!!props.libroSeleccionado && <p>{props.libroSeleccionado.author}</p>}
-            <button onClick={props.deseleccionarLibro}>De acuerdo, lo leeré.</button>
+            <button className="button" onClick={props.deseleccionarLibro}>De acuerdo, lo leeré.</button>
         </Modal>
     )
 }

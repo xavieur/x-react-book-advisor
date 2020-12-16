@@ -20,13 +20,13 @@ export default class AddBook extends React.Component {
     render() {
         return (
             <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.introducirLibro}>
+                {this.state.error && <p className="add-book-error">{this.state.error}</p>}
+                <form className="add-book" onSubmit={this.introducirLibro}>
                     <label htmlFor="title">Título</label>
-                    <input type="text" name="title" id="title" />
+                    <input className="add-book__input" type="text" name="title" id="title" />
                     <label htmlFor="author">Autor</label>
-                    <input type="text" name="author" id="author" />
-                    <button>Añadir libro</button>
+                    <input className="add-book__input" type="text" name="author" id="author" />
+                    <button className="button">Añadir libro</button>
                 </form>
             </div>
         )
