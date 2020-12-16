@@ -1,13 +1,19 @@
 {
   "name": "x-react-book-advisor",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./public/js/index.bundle.js",
   "repository": "https://github.com/xavieur/x-react-book-advisor.git",
   "author": "xavieur <one@email.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --watch",
+    "dev": "webpack serve"
+  },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-modal": "^3.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

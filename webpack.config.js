@@ -2,6 +2,11 @@ const path = require('path')
 
 module.exports = {
     mode: 'development',
+    watchOptions: {
+        ignored: /node_modules/,
+        aggregateTimeout: 1000,
+        poll: 3000
+    },
     entry: {
         index: './src/index.js'
     },
@@ -13,7 +18,12 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+            }
         },
         {
             test: /\.(sa|sc|c)ss$/,
