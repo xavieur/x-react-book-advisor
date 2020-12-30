@@ -1,8 +1,8 @@
 import React from 'react'
 import Modal from 'react-modal';
+Modal.setAppElement('#appRoot')
 
 const RecommendModal = (props) => {
-    console.log(props)
     return (
         <Modal
             isOpen={!!props.libroSeleccionado}
@@ -10,6 +10,7 @@ const RecommendModal = (props) => {
             contentLabel="Libro recomendado"
             closeTimeoutMS={100}
             className="modal"
+            ariaHideApp={true}
         >
             <h3>Libro recomendado</h3>
             {!!props.libroSeleccionado && <p>{props.libroSeleccionado.title}</p>}

@@ -28,30 +28,22 @@ export default class BooksApp extends React.Component {
         console.log('escoger libro')
         const indice = Math.floor(Math.random() * this.state.books.length)
 
-        this.setState(() => {
-            return {
-                recommendedBook: this.state.books[indice]
-            }
-        })
+        this.setState(() => ({
+            recommendedBook: this.state.books[indice]
+        }))
         /* alert(this.state.books[indice].title + ' / ' + this.state.books[indice].author); */
     }
     borrarLibros() {
         console.log('aquí ponemos la trituradora')
-        this.setState(() => {
-            return {
-                books: []
-            }
-        })
+        this.setState(() => ({
+            books: []
+        }))
     }
     borrarUnLibro(tituloABorrar) {
         console.log('tituloABorrar', tituloABorrar);
-        this.setState((estadoPrevio) => {
-            return {
-                books: estadoPrevio.books.filter((book) => {
-                    return book.title !== tituloABorrar
-                })
-            }
-        })
+        this.setState((estadoPrevio) => ({
+            books: estadoPrevio.books.filter((book) => book.title !== tituloABorrar)
+        }))
     }
     introducirLibro(nuevoLibro) {
         if (!nuevoLibro.title) {
@@ -64,16 +56,35 @@ export default class BooksApp extends React.Component {
             return 'Libro repetido'
         }
 
-        this.setState((estadoPrevio) => {
-            return {
-                books: estadoPrevio.books.concat(nuevoLibro)
-            }
-        })
+        this.setState((estadoPrevio) => ({
+            books: estadoPrevio.books.concat(nuevoLibro)
+        }))
     }
     deseleccionarLibro() {
-        this.setState(() => {
-            return { recommendedBook: undefined }
-        })
+        this.setState(() => ({ recommendedBook: undefined }))
+    }
+    componentDidMount() {
+        try {
+            const booksJson = localStorage.getItem('books')
+            const books = JSON.parse(booksJson)
+
+            if (books) {
+                this.setState(() => ({
+                    books: books
+                }))
+            }
+        } catch (error) {
+
+        }
+    }
+    componentDidUpdate(propsPrevio, estadoPrevio) {
+        if (estadoPrevio.books.length !== this.state.books.length) {
+            const jsonBooks = JSON.stringify(this.state.books)
+            localStorage.setItem('books', jsonBooks)
+        }
+    }
+    componentWillUnmount() {
+        console.log('component will unmount')
     }
     render() {
         const subtitle = 'Te asesoro sobre entidades alfanuméricas'
