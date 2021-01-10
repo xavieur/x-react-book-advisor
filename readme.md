@@ -23,7 +23,8 @@ Y se aprovecha esta descarga añadiendo una nueva regla (rule) en el fichero web
     use: {
         loader: 'babel-loader',
         options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', {'plugins': ['@babel/plugin-proposal-class-properties']}]
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties']
         }
     }
 }
