@@ -15,34 +15,42 @@ module.exports = {
         filename: '[name].bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env', '@babel/preset-react']
-                }
-            }
-        },
-        {
-            test: /\.(sa|sc|c)ss$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        postcssOptions: {
-                            plugins: [
-                                'postcss-preset-env'
-                            ]
+        rules: [ // [Rule]
+            { // Rule object
+                // rule conditions: test, include, exclude, resource
+                // all conditions must match
+                test: /\.js$/,
+                exclude: /node_modules/,
+                // rule results
+                use: [ // [UseEntry]
+                    { // UseEntry: string | {}
+                        loader: 'babel-loader', // required
+                        options: {
+                            /* this works as well
+                            presets: ['@babel/preset-env', '@babel/preset-react', {'plugins': ['@babel/plugin-proposal-class-properties']}] 
+                            */
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
                         }
-                    }
-                },
-                'sass-loader'
-            ]
-        }]
+                    }]
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    'postcss-preset-env'
+                                ]
+                            }
+                        }
+                    },
+                    'sass-loader'
+                ]
+            }]
     },
     devtool: 'eval-cheap-module-source-map',
     devServer: {
